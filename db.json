@@ -1,0 +1,201 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Coffee Latte",
+      "category": "drink",
+      "price": 25000,
+      "stock": 10,
+      "image": "https://picsum.photos/300?1"
+    },
+    {
+      "id": "2",
+      "name": "Burger Classic",
+      "category": "food",
+      "price": 45000,
+      "stock": 8,
+      "image": "https://picsum.photos/300?2"
+    },
+    {
+      "id": "3",
+      "name": "Pizza Cheese",
+      "category": "food",
+      "price": 75000,
+      "stock": 5,
+      "image": "https://picsum.photos/300?3"
+    },
+    {
+      "id": "4",
+      "name": "Iced Tea",
+      "category": "drink",
+      "price": 12000,
+      "stock": 20,
+      "image": "https://picsum.photos/300?4"
+    },
+    {
+      "id": "5",
+      "name": "French Fries",
+      "category": "food",
+      "price": 18000,
+      "stock": 15,
+      "image": "https://picsum.photos/300?5"
+    },
+    {
+      "id": "6",
+      "name": "Chicken Sandwich",
+      "category": "food",
+      "price": 35000,
+      "stock": 12,
+      "image": "https://picsum.photos/300?6"
+    },
+    {
+      "id": "7",
+      "name": "Chocolate Milkshake",
+      "category": "drink",
+      "price": 30000,
+      "stock": 9,
+      "image": "https://picsum.photos/300?7"
+    },
+    {
+      "id": "8",
+      "name": "Spaghetti Bolognese",
+      "category": "food",
+      "price": 55000,
+      "stock": 6,
+      "image": "https://picsum.photos/300?8"
+    },
+    {
+      "id": "9",
+      "name": "Onion Rings",
+      "category": "snack",
+      "price": 20000,
+      "stock": 14,
+      "image": "https://picsum.photos/300?9"
+    },
+    {
+      "id": "10",
+      "name": "Mineral Water",
+      "category": "drink",
+      "price": 8000,
+      "stock": 50,
+      "image": "https://picsum.photos/300?10"
+    },
+    {
+      "id": "11",
+      "name": "Hot Cappuccino",
+      "category": "drink",
+      "price": 27000,
+      "stock": 11,
+      "image": "https://picsum.photos/300?11"
+    },
+    {
+      "id": "12",
+      "name": "Donut Glazed",
+      "category": "snack",
+      "price": 15000,
+      "stock": 25,
+      "image": "https://picsum.photos/300?12"
+    }
+  ],
+  "checkout": [
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "tOBztn3Lezc"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "FiDZezgloOY"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "Ceolk04kL-I"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "N0_CChgCZyE"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "3ltwK0JKepM"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "hR3LR2tDMzg"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        }
+      ],
+      "total": 150000,
+      "id": "BFUR4_csYQM"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        },
+        {
+          "productId": "2",
+          "qty": 3
+        }
+      ],
+      "total": 285000,
+      "id": "atPqIg-ZfHc"
+    },
+    {
+      "items": [
+        {
+          "productId": "3",
+          "qty": 2
+        },
+        {
+          "productId": "2",
+          "qty": 3
+        }
+      ],
+      "total": 285000,
+      "id": "22QCwF9Tle4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
