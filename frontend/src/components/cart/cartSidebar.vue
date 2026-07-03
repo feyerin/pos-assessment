@@ -51,8 +51,9 @@ const handleCheckout = async () => {
 </script>
 
 <template>
-  <aside class="sticky top-6 overflow-hidden rounded-[30px] bg-white shadow-xl ring-1 ring-slate-200">
-
+  <aside
+    class="sticky top-6 flex h-[calc(100vh-3rem)] flex-col overflow-hidden rounded-[30px] bg-white shadow-xl ring-1 ring-slate-200"
+  >
     <div class="border-b border-slate-100 p-6">
       <div class="flex items-center justify-between">
 

@@ -40,18 +40,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="mb-8">
-    <div class="flex flex-wrap items-center justify-between gap-5">
-
+  <header class="mb-6 md:mb-8">
+    <div
+      class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+    >
       <!-- LEFT -->
-      <div class="flex flex-wrap items-center gap-4">
+      <div class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
 
         <!-- Date -->
         <div
-          class="flex items-center gap-4 rounded-3xl bg-white px-6 py-4 shadow-sm"
+          class="flex flex-1 items-center gap-4 rounded-3xl bg-white px-5 py-4 shadow-sm sm:flex-none sm:px-6"
         >
           <div
-            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100"
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-100"
           >
             <CalendarDays
               :size="22"
@@ -59,12 +60,12 @@ onUnmounted(() => {
             />
           </div>
 
-          <div>
+          <div class="min-w-0">
             <p class="text-sm text-slate-400">
               Today
             </p>
 
-            <h2 class="font-semibold text-slate-800">
+            <h2 class="truncate font-semibold text-slate-800">
               {{ currentDate }}
             </h2>
           </div>
@@ -72,10 +73,10 @@ onUnmounted(() => {
 
         <!-- Time -->
         <div
-          class="flex items-center gap-4 rounded-3xl bg-white px-6 py-4 shadow-sm"
+          class="flex flex-1 items-center gap-4 rounded-3xl bg-white px-5 py-4 shadow-sm sm:flex-none sm:px-6"
         >
           <div
-            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-100"
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-orange-100"
           >
             <Clock3
               :size="22"
@@ -88,7 +89,7 @@ onUnmounted(() => {
               Current Time
             </p>
 
-            <h2 class="text-xl font-bold text-slate-800">
+            <h2 class="text-lg font-bold text-slate-800 sm:text-xl">
               {{ currentTime }}
             </h2>
           </div>
@@ -97,11 +98,12 @@ onUnmounted(() => {
       </div>
 
       <!-- RIGHT -->
-      <div class="flex items-center gap-4">
-
+      <div
+        class="flex flex-col gap-3 sm:flex-row sm:items-center lg:justify-end"
+      >
         <!-- Status -->
         <div
-          class="flex items-center gap-3 rounded-full bg-emerald-50 px-5 py-3"
+          class="flex items-center justify-center gap-3 rounded-full bg-emerald-50 px-5 py-3"
         >
           <ShoppingBag
             :size="18"
@@ -118,7 +120,7 @@ onUnmounted(() => {
           class="flex items-center gap-3 rounded-3xl bg-white px-4 py-3 shadow-sm"
         >
           <div
-            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-100"
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-blue-100"
           >
             <UserRound
               :size="20"
@@ -138,7 +140,6 @@ onUnmounted(() => {
         </div>
 
       </div>
-
     </div>
   </header>
 </template>

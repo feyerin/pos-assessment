@@ -19,24 +19,44 @@ onMounted(() => {
 
 <template>
   <div class="min-h-screen bg-slate-100">
-    <main class="mx-auto max-w-7xl p-6">
+    <main class="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6">
 
       <HeaderBar />
 
-      <CategoryList />
+      <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
 
-      <div class="my-8">
-        <SearchBar v-model="productStore.search" />
-      </div>
+        <!-- Left Content -->
+        <section class="md:col-span-7 lg:col-span-8">
 
-      <div class="grid gap-6 lg:grid-cols-12">
+          <div class="mb-6">
+            <div
+              class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <h2 class="text-2xl font-bold text-slate-800">
+                  Categories
+                </h2>
 
-        <section class="lg:col-span-8 xl:col-span-8">
-          <ProductGrid />
+                <p class="text-sm text-slate-500">
+                  Browse menu by category
+                </p>
+              </div>
+            </div>
+
+            <SearchBar v-model="productStore.search" />
+          </div>
+
+          <CategoryList />
+
+          <div class="mt-6">
+            <ProductGrid />
+          </div>
+
         </section>
 
-        <aside class="lg:col-span-4 xl:col-span-4">
-          <div class="sticky top-6">
+        <!-- Cart -->
+        <aside class="md:col-span-5 lg:col-span-4">
+            <div class="lg:sticky lg:top-6">
             <CartSidebar />
           </div>
         </aside>
@@ -45,5 +65,4 @@ onMounted(() => {
 
     </main>
   </div>
-
 </template>

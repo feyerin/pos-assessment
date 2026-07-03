@@ -39,7 +39,7 @@ function handleAddToCart() {
       <img
         :src="product.image"
         :alt="product.name"
-        class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+        class="h-full p-2 rounded-[28px] w-full object-cover transition duration-500 group-hover:scale-110 hover:rounded-[28px]"
       >
 
       <!-- Stock -->

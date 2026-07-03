@@ -66,22 +66,7 @@ const categories = computed(() => [
 </script>
 
 <template>
-  <section class="mb-8">
-
-    <div class="mb-5 flex items-center justify-between">
-
-      <div>
-        <h2 class="text-2xl font-bold text-slate-800">
-          Categories
-        </h2>
-
-        <p class="text-sm text-slate-500">
-          Browse menu by category
-        </p>
-      </div>
-
-    </div>
-
+  <section class="mb-6">
     <div
       class="flex gap-4 overflow-x-auto pb-3 scrollbar-hide"
     >
