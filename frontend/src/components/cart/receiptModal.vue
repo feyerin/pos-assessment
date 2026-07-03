@@ -46,9 +46,12 @@ const handlePrint = () => {
         v-if="showReceipt && receipt"
         class="fixed inset-0 z-999 flex items-center justify-center bg-black/40 backdrop-blur-sm p-5"
       >
-        <div class="w-full max-w-md rounded-4xl bg-white shadow-2xl">
+        <div
+          class="w-full max-w-md overflow-hidden rounded-4xl bg-white shadow-2xl max-h-[90vh] flex flex-col"
+        >
 
-          <div class="border-b p-8 text-center">
+          <!-- HEADER -->
+          <div class="border-b p-8 text-center shrink-0">
             <div class="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
               <CircleCheckBig :size="42" class="text-green-600" />
             </div>
@@ -62,7 +65,8 @@ const handlePrint = () => {
             </p>
           </div>
 
-          <div class="space-y-5 p-8">
+          <!-- SCROLLABLE CONTENT -->
+          <div class="flex-1 overflow-y-auto space-y-5 p-8">
 
             <div class="flex items-center gap-3">
               <Receipt :size="22" class="text-blue-600" />
@@ -84,10 +88,10 @@ const handlePrint = () => {
               <div
                 v-for="item in receipt.items"
                 :key="item.productId"
-                class="flex justify-between"
+                class="flex justify-between gap-4"
               >
-                <div>
-                  <p class="font-medium">
+                <div class="min-w-0">
+                  <p class="font-medium break-words">
                     {{ item.name }}
                   </p>
 
@@ -96,7 +100,7 @@ const handlePrint = () => {
                   </p>
                 </div>
 
-                <span class="font-semibold">
+                <span class="shrink-0 font-semibold">
                   {{ formatCurrency(item.qty * item.price) }}
                 </span>
               </div>
@@ -106,6 +110,7 @@ const handlePrint = () => {
             <div class="border-t border-dashed pt-5">
               <div class="flex justify-between text-lg font-bold">
                 <span>Total</span>
+
                 <span class="text-blue-600">
                   {{ formatCurrency(receipt.total) }}
                 </span>
@@ -114,7 +119,8 @@ const handlePrint = () => {
 
           </div>
 
-          <div class="flex gap-4 border-t bg-slate-50 p-6">
+          <!-- FOOTER -->
+          <div class="flex gap-4 border-t bg-slate-50 p-6 shrink-0">
 
             <button
               class="flex flex-1 items-center justify-center gap-2 rounded-2xl border bg-white py-3 font-semibold transition hover:bg-slate-100"
