@@ -1,6 +1,6 @@
 # POS Cashier UI — Frontend Developer Assessment
 
-A modern Point of Sales (POS) Single Page Application built with **Vue 3**, **TypeScript**, **Pinia**, and **Tailwind CSS**.
+Point of Sales (POS) Single Page Application built with **Vue 3**, **TypeScript**, **Pinia**, and **Tailwind CSS**.
 
 This project was developed as part of a Frontend Developer technical assessment with a focus on building a responsive, scalable, and maintainable cashier interface. While the backend is simulated using **JSON Server**, the frontend architecture is designed to closely resemble a production-ready application by separating business logic, presentation, and API communication.
 
@@ -388,7 +388,6 @@ Possible enhancements for a production-ready POS system:
 - Inventory management
 - Customer management
 - Keyboard shortcuts for cashier workflow
-- Unit testing with Vitest
 - End-to-end testing with Cypress
 
 ---
