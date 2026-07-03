@@ -29,6 +29,10 @@ onMounted(() => {
         <section class="md:col-span-7 lg:col-span-8">
 
           <div class="mb-6">
+            <SearchBar v-model="productStore.search" />
+          </div>
+
+          <div>
             <div
               class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
             >
@@ -36,17 +40,12 @@ onMounted(() => {
                 <h2 class="text-2xl font-bold text-slate-800">
                   Categories
                 </h2>
-
-                <p class="text-sm text-slate-500">
-                  Browse menu by category
-                </p>
               </div>
             </div>
+            
+            <CategoryList />
 
-            <SearchBar v-model="productStore.search" />
           </div>
-
-          <CategoryList />
 
           <div class="mt-6">
             <ProductGrid />
