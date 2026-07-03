@@ -1,30 +1,12 @@
 <script setup lang="ts">
-import { ref, watch } from "vue"
 import { Search, X } from "lucide-vue-next"
 
-const emit = defineEmits<{
-  (e: "update:modelValue", value: string): void
-}>()
-
-const props = defineProps<{
-  modelValue: string
-}>()
-
-const localValue = ref(props.modelValue)
-
-watch(
-  () => props.modelValue,
-  (value) => {
-    localValue.value = value
-  }
-)
-
-watch(localValue, (value) => {
-  emit("update:modelValue", value)
+const model = defineModel<string>({
+  default: "",
 })
 
 const clear = () => {
-  localValue.value = ""
+  model.value = ""
 }
 </script>
 
@@ -43,7 +25,7 @@ const clear = () => {
 
     <!-- Input -->
     <input
-      v-model="localValue"
+      v-model="model"
       type="text"
       placeholder="Search food, drinks..."
       class="h-16 w-full rounded-3xl border border-slate-200 bg-white pl-14 pr-14 text-[15px] text-slate-700 shadow-sm transition-all duration-300 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100"
@@ -59,7 +41,7 @@ const clear = () => {
       leave-to-class="scale-75 opacity-0"
     >
       <button
-        v-if="localValue"
+        v-if="model"
         @click="clear"
         class="absolute right-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-slate-100 transition hover:bg-red-100"
       >

@@ -3,6 +3,7 @@ import { defineStore } from "pinia"
 import { checkout as checkoutAPI } from "../services/checkoutService"
 import type { CartItem } from "../types/cart"
 import type { Receipt } from "../types/receipt"
+import { getErrorMessage } from "../utils/getErrorMessage"
 
 type CheckoutResult =
   | { ok: true }
@@ -52,10 +53,15 @@ export const useCheckoutStore = defineStore("checkout", () => {
       showReceipt.value = true
 
       return { ok: true }
-    } catch (e: any) {
-      const message = e?.message ?? "Checkout failed"
+    } catch (err: unknown) {
+      const message = getErrorMessage(err)
+
       error.value = message
-      return { ok: false, message }
+
+      return {
+        ok: false,
+        message,
+      }
     } finally {
       loading.value = false
     }

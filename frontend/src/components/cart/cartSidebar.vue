@@ -52,9 +52,10 @@ const handleCheckout = async () => {
 
 <template>
   <aside
-    class="sticky top-6 flex h-[calc(100vh-3rem)] flex-col overflow-hidden rounded-[30px] bg-white shadow-xl ring-1 ring-slate-200"
+    class="sticky top-0 md:top-4 lg:top-6 flex h-[80vh] lg:h-[calc(100vh-3rem)] flex-col overflow-hidden rounded-[30px] bg-white shadow-xl ring-1 ring-slate-200"
   >
-    <div class="border-b border-slate-100 p-6">
+    <!-- HEADER -->
+    <div class="border-b border-slate-100 p-4 md:p-6 shrink-0">
       <div class="flex items-center justify-between">
 
         <div class="flex items-center gap-4">
@@ -79,54 +80,63 @@ const handleCheckout = async () => {
       </div>
     </div>
 
-    <div
-      v-if="receipt"
-      class="flex flex-col items-center justify-center px-8 py-24"
-    >
-      <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-100">
-        <CircleCheckBig :size="48" class="text-green-600" />
+    <!-- CONTENT -->
+    <div class="flex-1 overflow-hidden">
+
+      <!-- SUCCESS STATE -->
+      <div
+        v-if="receipt"
+        class="flex flex-col items-center justify-center px-8 py-24"
+      >
+        <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-green-100">
+          <CircleCheckBig :size="48" class="text-green-600" />
+        </div>
+
+        <h2 class="text-xl font-bold text-slate-800">
+          Payment Successful
+        </h2>
+
+        <p class="mt-2 text-center text-slate-500">
+          Preparing next transaction...
+        </p>
       </div>
 
-      <h2 class="text-xl font-bold text-slate-800">
-        Payment Successful
-      </h2>
+      <!-- EMPTY STATE -->
+      <div
+        v-else-if="!items.length"
+        class="flex flex-col items-center justify-center px-8 py-20"
+      >
+        <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-slate-100">
+          <ShoppingCart :size="40" class="text-slate-400" />
+        </div>
 
-      <p class="mt-2 text-center text-slate-500">
-        Preparing next transaction...
-      </p>
-    </div>
+        <h3 class="text-lg font-semibold text-slate-700">
+          Cart is Empty
+        </h3>
 
-    <div
-      v-else-if="!items.length"
-      class="flex flex-col items-center justify-center px-8 py-20"
-    >
-      <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-slate-100">
-        <ShoppingCart :size="40" class="text-slate-400" />
+        <p class="mt-2 text-center text-sm text-slate-400">
+          Select products to start an order.
+        </p>
       </div>
 
-      <h3 class="text-lg font-semibold text-slate-700">
-        Cart is Empty
-      </h3>
+      <!-- CART LIST -->
+      <div
+        v-else
+        class="h-full overflow-y-auto space-y-4 p-4 md:p-6"
+      >
+        <CartItem
+          v-for="item in items"
+          :key="item.product.id"
+          :item="item"
+        />
+      </div>
 
-      <p class="mt-2 text-center text-sm text-slate-400">
-        Select products to start an order.
-      </p>
     </div>
 
-    <div
-      v-else
-      class="max-h-130 space-y-4 overflow-y-auto p-6"
-    >
-      <CartItem
-        v-for="item in items"
-        :key="item.product.id"
-        :item="item"
-      />
-    </div>
-
+    <!-- FOOTER (ALWAYS VISIBLE) -->
     <div
       v-if="items.length && !receipt"
-      class="border-t border-slate-100 bg-slate-50 p-6"
+      class="border-t border-slate-100 bg-slate-50 p-4 md:p-6 shrink-0"
     >
 
       <div class="space-y-4">

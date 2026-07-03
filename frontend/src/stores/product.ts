@@ -3,6 +3,7 @@ import { computed, ref } from "vue"
 
 import type { Product } from "../types/product"
 import { getProducts } from "../services/productService" 
+import { getErrorMessage } from "../utils/getErrorMessage"
 
 export const useProductStore = defineStore("product", () => {
   const products = ref<Product[]>([])
@@ -25,15 +26,15 @@ export const useProductStore = defineStore("product", () => {
     })
   })
 
-  const fetchProducts = async (): Promise<void> => {
+  const fetchProducts = async () => {
     loading.value = true
-    error.value = ""
+    error.value = null
 
     try {
       products.value = await getProducts()
     } catch (err) {
-      error.value = "Failed to fetch products."
       console.error(err)
+      error.value = getErrorMessage(err)
     } finally {
       loading.value = false
     }

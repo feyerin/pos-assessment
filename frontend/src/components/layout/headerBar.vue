@@ -4,7 +4,6 @@ import { ref, onMounted, onUnmounted } from "vue"
 import {
   CalendarDays,
   Clock3,
-  ShoppingBag,
   UserRound
 } from "lucide-vue-next"
 
