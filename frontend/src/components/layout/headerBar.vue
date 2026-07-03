@@ -101,19 +101,6 @@ onUnmounted(() => {
       <div
         class="flex flex-col gap-3 sm:flex-row sm:items-center lg:justify-end"
       >
-        <!-- Status -->
-        <div
-          class="flex items-center justify-center gap-3 rounded-full bg-emerald-50 px-5 py-3"
-        >
-          <ShoppingBag
-            :size="18"
-            class="text-emerald-600"
-          />
-
-          <span class="font-medium text-emerald-700">
-            Open Order
-          </span>
-        </div>
 
         <!-- Cashier -->
         <div

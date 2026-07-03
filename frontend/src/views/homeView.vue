@@ -21,12 +21,12 @@ onMounted(() => {
   <div class="min-h-screen bg-slate-100">
     <main class="mx-auto max-w-7xl px-4 py-4 sm:px-6 sm:py-6">
 
-      <HeaderBar />
-
       <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12">
 
         <!-- Left Content -->
         <section class="md:col-span-7 lg:col-span-8">
+
+          <HeaderBar />
 
           <div class="mb-6">
             <SearchBar v-model="productStore.search" />
